@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+
+            body{ 
+
+                background-image:url("https://static4.depositphotos.com/1001469/308/i/600/depositphotos_3087388-stock-photo-red-phone-on-the-book.jpg") ;
+
+                background-repeat: no-repeat; background-size:contain;
+
+            
+
+             border-style: solid; border-width: 0.5px; 
+
+             margin-left:410px; margin-right:410px}
+
+    </style>
+
+</head>
+
+<body>
+
+    <h2 style="text-align:center;color: orange;">Book a Call</h2><br>
+
+    <h5 style="text-align:center">Book a call slot and our representative will call you within 1 hr of selected time</h5>
+
+    <hr width="100%" size="4px">
+
+    <form action="#" onsubmit="saveTolocalStorage(event)">                                      
+
+    <label>Name:</label>
+
+    <br>
+
+    <input type="text" name="username" required style="width: 500px;"/>
+
+    <br><br>
+
+    <label>Email:</label>
+
+    <br>
+
+    <input type="email" name="Email" required style="width: 500px;" />
+
+    <br><br>
+
+    <label>Phone:</label>
+
+    <br>
+
+    <input type="text" name="phone" required style="width: 500px;"/>
+
+    <br><br>
+
+<label>Time for Call:</label>
+
+<br>
+
+<input type="date" style="width: 250px;">  <input type="time" style="width: 250px;">
+
+<br><br>
+
+    <input type="submit" value="Get a call" style="width: 500px;background-color: orange;color:white;" />
+
+    </form>
+
+    <script>
+        
+function saveTolocalStorage(event){
+    event.preventDefault();
+    const name=event.target.username.value;
+    const email=event.target.Email.value;
+    const phone=event.target.phone.value;
+    localStorage.setItem('name', name);
+    localStorage.setItem('email', email);
+    localStorage.setItem('phonenumber', phone);
+const obj={
+    name,email,phone
+}
+localStorage.setItem(obj.email,JSON.stringify(obj));
+}
+    </script>
+
+</body>
+
+</html>
